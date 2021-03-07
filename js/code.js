@@ -1,0 +1,2 @@
+// Javascript Sample
+alert("hoge");
