@@ -1,6 +1,6 @@
 ## System_PHP_setumei
 
-フォルダ　sql　　君塚
+<p>フォルダ　sql　　君塚</p>
          css　　佐藤
          main -> index(カレンダー)    大野
                  detail(詳細画面) * 4　　藤代
