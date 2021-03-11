@@ -23,18 +23,6 @@ try
 {
 
 
-
-// $dsn='mysql:dbname=yoyaku;host=localhost;charset=utf8';
-// $user='root';
-// $password='';
-// $dbh=new PDO($dsn,$user,$password);
-// $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-
-
-
-// $sql='SELECT code,kaijou,motimono,shousai,syurui FROM setumeikai WHERE 1';
-// $stmt=$dbh->prepare($sql);
-// $stmt->execute();
 if(isset($_SESSION['cart'])==true)
 {
 	$cart=$_SESSION['cart'];
@@ -46,9 +34,6 @@ else
 {
 	$max=0;
 }
-// if(isset($_SESSION['day'])==true){
-//     $day=$_SESSION['day'];
-// }
 if($max==0)
 {
 	print '予約するものがありません<br />';
@@ -97,12 +82,44 @@ $day = $_SESSION['day'];
 	$data[]=$pro_syurui;
 	$data[]=$day;
 	$stmt->execute($data);
+	
+	require_once('../common/common.php');
+	
+	$post=sanitize($_POST);
+	
+	$onamae=$post['onamae'];
+	$email=$post['email'];
+	$postal1=$post['postal1'];
+	$postal2=$post['postal2'];
+	$address=$post['address'];
+	$tel=$post['tel'];
+	
+	print $onamae.'様<br />';
+	print 'ご予約ありがとうございます<br />';
+	print $email.'にメールを送りましたのでご確認ください。<br />';
+	print $postal1.'-'.$postal2.'<br />';
+	print $address.'<br />';
+	print $tel.'<br />';
+	
+	$honbun='';
+	$honbun.=$onamae."様\n\nこのたびはご予約ありがとうございました。\n";
+	$honbun.="\n";
+	$honbun.="\n";
+	$honbun.="--------------------\n";
+	
+	$title='予約';
+	$header='From:'.$email;
+	$honbun=html_entity_decode($honbun,ENT_QUOTES,'UTF-8');
+	mb_language('Japanese');
+	mb_internal_encoding('UTF-8');
+	mb_send_mail('info@ohara.co.jp',$title,$honbun,$header);
+	
+	
+	
+	
+	
 }
-
-
-
-
-catch (Exception $e)
+	catch (Exception $e)
 {
   print 'ただいま障害により大変ご迷惑をお掛けしております。';
   exit();
