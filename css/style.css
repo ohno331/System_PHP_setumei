@@ -160,3 +160,22 @@ a.btn-square:hover {
   color: #fff;
   background: #f56500;
 }
+
+
+#notice {
+  position: relative;
+  border: 3px double #da4033;
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 20px 20px 5px 20px;
+}
+#notice::before {
+  content: "注意！";
+  position: absolute;
+  background-color: #f4f4f4;
+  color: #da4033;
+  font-weight: bold;
+  left: 20px;
+  top: -23px;
+  padding: 10px;
+}

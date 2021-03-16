@@ -8,6 +8,10 @@
 ?>
 
 
+
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -93,6 +97,60 @@ $day = $_SESSION['day'];
 	$postal2=$post['postal2'];
 	$address=$post['address'];
 	$tel=$post['tel'];
+
+
+
+	$post=sanitize($_POST);
+
+
+$onamae=$post['onamae'];
+
+$email=$post['email'];
+
+$postal1=$post['postal1'];
+
+$postal2=$post['postal2'];
+
+$address=$post['address'];
+
+$tel=$post['tel'];
+
+
+print $onamae.'様<br />';
+
+print 'ご予約ありがとうございます<br />';
+
+print $email.'にメールを送りましたのでご確認ください。<br />';
+
+print $postal1.'-'.$postal2.'<br />';
+
+print $address.'<br />';
+
+print $tel.'<br />';
+
+
+$honbun='';
+
+$honbun.=$onamae."様\n\nこのたびはご予約ありがとうございました。\n";
+
+$honbun.="\n";
+
+$honbun.="\n";
+
+$honbun.="--------------------\n";
+
+
+$title='予約';
+
+$header='From:info@ohara.co.jp';
+
+$honbun=html_entity_decode($honbun,ENT_QUOTES,'UTF-8');
+
+mb_language('Japanese');
+
+mb_internal_encoding('UTF-8');
+
+mb_send_mail($email,$title,$honbun,$header);
 	
 	// print $onamae.'様<br />';
 	// print 'ご予約ありがとうございます<br />';

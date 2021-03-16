@@ -2,7 +2,7 @@
 session_start();
 session_regenerate_id(true);
 if(isset($_SESSION['member_login'])==false){
-    print'ログインされていません。<br />';
+    print'<h3 id="notice">ログインされていません。</h3><br/>';
     print'<a href="./member_login.html">ログイン画面へ</a>';
     exit();
 }else{
@@ -20,7 +20,7 @@ if(isset($_SESSION['member_login'])==false){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="./css/style.css">
     <title>予約</title>
   </head>
