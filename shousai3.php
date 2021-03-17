@@ -75,7 +75,7 @@ catch (Exception $e)
 
 
     <h2>最終面接</h2>
-    <table>
+    <table border="1">
         <tr>
             <th>日付</th>
             <td>

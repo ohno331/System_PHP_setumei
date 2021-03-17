@@ -150,7 +150,7 @@ mb_language('Japanese');
 
 mb_internal_encoding('UTF-8');
 
-mb_send_mail($email,$title,$honbun,$header);
+// mb_send_mail($email,$title,$honbun,$header);
 	
 	// print $onamae.'様<br />';
 	// print 'ご予約ありがとうございます<br />';

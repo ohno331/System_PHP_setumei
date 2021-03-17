@@ -3,21 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/style.css">
     <title>予約</title>
   </head>
   <body>
 
-    
-会員ログイン<br />
+<div class="main">   
+<p class="sign" align="center">会員ログイン</p><br/>
 <br />
-<form method="post" action="member_login_check.php">
-登録メールアドレス<br />
-<input type="text" name="email" ><br />
+<form class="form" method="post" action="member_login_check.php">
+</p>登録メールアドレス<br/>
+<input class="mail" type="text" name="email" ><br />
 パスワード<br />
-<input type="password" name="pass"><br />
+<input class="pass" type="password" name="pass"><br />
 <br />
-<input type="submit" class="btn-square" value="ログイン" width="">
-<a href="./new/member.html">新規会員登録</a>
+<input type="submit" class="in" value="ログイン" width="">
+<!-- <a href="./new/member.html">新規会員登録</a> -->
 </form>
+</div>
 </body>
 </html>
